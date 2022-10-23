@@ -1,13 +1,124 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+  --primary-color: #c3aa94;
+  --secondary-color: #534e4a;
+  --light--primary-color: #e5ccb6;
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.navbar,
+.navbar-custom {
+  background-color: var(--secondary-color) !important;
+}
+.nav-logo {
+  height: 44px;
+  width: 200px;
+}
+main {
+  background-color: var(--primary-color);
+  color: black;
+  padding-bottom: 10px;
+}
+.loader-container {
+  height: 100vh;
+  background-color: var(--primary-color);
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* submarry style  */
+.main--subname {
+  text-align: center;
+  font-size: 3rem;
+  padding: 20px;
+  color: black;
+  font-weight: 700;
+}
+
+.main--post-list {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.post {
+  border: #534e4a 1px solid;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 10px;
+  list-style: none;
+  display: flex;
+  background-color: var(--light--primary-color);
+  cursor: pointer;
+}
+.post:hover {
+  border: #877e77 1px solid;
+}
+.post--content {
+  display: grid;
+  place-content: center;
+}
+.post--title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+.post--summary {
+  font-size: 1rem;
+  margin: 9px 0px;
+  padding: 0;
+  display: none;
+}
+.open-summary {
+  display: block;
+}
+.post--upvotes {
+  align-self: center;
+  margin-right: 10px;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  text-align: center;
+  align-self: center;
+
+  display: flex;
+  flex-direction: column;
+}
+.post--thumbnail {
+  width: 100px;
+  max-height: 69px;
+  align-self: center;
+  margin: 0 10px;
+  object-fit: cover;
+}
+.post--thumbnail.open-summary {
+  display: none;
+}
+.arrow-img {
+  width: 40px;
+  margin: auto;
+}
+.post--link {
+  text-decoration: none;
+  font-size: 0.9rem;
+  width: max-content;
+}
+.post--link:hover {
+  text-decoration: underline;
 }
