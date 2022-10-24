@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import placeholder from "../assets/Placeholder.jpg";
 
 export default function Post({ post }) {
+  // format link from post to be more concise and readable
   const domain = post.link.split("/")[2].split(".").slice(-2).join(".");
   const shortenedParam = post.link
     .split("/")

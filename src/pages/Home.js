@@ -2,10 +2,12 @@ import React from "react";
 import Post from "../components/Post";
 
 export default function Home({ apiData }) {
+  // sort all posts by upvotes in descending order
   const allSortedPosts = apiData
     .map((sub) => sub.posts)
     .flat()
     .sort((a, b) => b.upvotes - a.upvotes);
+
   return (
     <main>
       <h2 className="main--subname">r/all</h2>

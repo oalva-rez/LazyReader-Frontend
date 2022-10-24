@@ -2,7 +2,10 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Post from "../components/Post";
 export default function Submmary({ apiData }) {
+  // retrieve subreddit name from url
   const { subreddit } = useParams();
+
+  // find the subreddit object in apiData
   const subData = apiData.find((sub) => sub.name === subreddit);
 
   return (

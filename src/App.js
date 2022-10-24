@@ -1,3 +1,17 @@
+/*
+  ---- LAZY READER ----
+  
+  Lazy Reader is an app which calls a backend API to retrieve data that contains
+  top posts from various subreddits. These posts are filtered so only ones linked
+  to an article are populated. The backend API returns a summarized version of
+  these articles and the front end displays them in a list. The user can click on
+  a post to view the summary. A link to the original article is also provided. 
+  The app is built using React and React Router. The app is deployed on Firebase
+  and the backend API is deployed on Heroku.
+
+  ---- Author: Ozkar Alvarez ----
+*/
+
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
@@ -11,7 +25,9 @@ function App() {
 
   useEffect(() => {
     async function fetchApiData() {
-      const response = await fetch("http://localhost:8000/api/all");
+      const response = await fetch(
+        "https://lazyreaderapi.herokuapp.com/api/all"
+      );
       const data = await response.json();
       setApiData(data);
       localStorage.setItem("apiData", JSON.stringify(data));
